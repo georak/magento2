@@ -40,9 +40,18 @@ define([
         _bindSubmit: function () {
             var self = this;
 
-            if (this.element.data('catalog-addtocart-initialized')) {
+            /*FIX George Rakitzis
+         if (this.element.data('catalog-addtocart-initialized')) {
                 return;
             }
+            must change to 
+if (typeof this.element.data('catalog-addtocart-initialized') !== "undefined") {
+     return;
+}*/
+if (this.element.data('catalog-addtocart-initialized')) {
+     return;
+ }
+
 
             this.element.data('catalog-addtocart-initialized', 1);
             this.element.on('submit', function (e) {
