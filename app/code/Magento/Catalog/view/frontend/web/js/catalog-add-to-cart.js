@@ -40,9 +40,12 @@ define([
         _bindSubmit: function () {
             var self = this;
 
-            if (this.element.data('catalog-addtocart-initialized')) {
-                return;
-            }
+            /* FIX George Rakitzis */
+            if (typeof this.element.data('catalog-addtocart-initialized') !== "undefined") {
+                 return;
+             }
+            /* FIX George Rakitzis END */
+
 
             this.element.data('catalog-addtocart-initialized', 1);
             this.element.on('submit', function (e) {
